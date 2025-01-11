@@ -15,8 +15,5 @@ dependencyResolutionManagement {
   }
 }
 
-rootProject.name = "CDL"
-
 include(":androidApp")
-
 include(":shared")

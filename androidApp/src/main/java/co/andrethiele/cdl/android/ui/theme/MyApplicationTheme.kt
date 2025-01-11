@@ -1,4 +1,4 @@
-package co.andrethiele.cdl.android
+package co.andrethiele.cdl.android.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.RoundedCornerShape

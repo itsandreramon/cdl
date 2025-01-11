@@ -1,4 +1,4 @@
-package co.andrethiele.cdl.android
+package co.andrethiele.cdl.android.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import co.andrethiele.cdl.Greeting
+import co.andrethiele.cdl.android.ui.theme.MyApplicationTheme
 
 class MainActivity : ComponentActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
