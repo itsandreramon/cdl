@@ -1,7 +1,7 @@
 plugins {
-  alias(libs.plugins.androidApplication)
-  alias(libs.plugins.kotlinAndroid)
-  alias(libs.plugins.compose.compiler)
+  alias(libs.plugins.android.application)
+  alias(libs.plugins.kotlin.android)
+  alias(libs.plugins.kotlin.compose)
 }
 
 android {
@@ -30,7 +30,9 @@ android {
 }
 
 dependencies {
-  implementation(projects.shared)
+  implementation(project(":shared"))
+  lintChecks(libs.compose.lints)
+
   implementation(libs.compose.ui)
   implementation(libs.compose.ui.tooling.preview)
   implementation(libs.compose.material3)

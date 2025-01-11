@@ -1,19 +1,35 @@
-enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+@file:Suppress("UnstableApiUsage")
 
 pluginManagement {
   repositories {
-    google()
-    gradlePluginPortal()
+    google {
+      content {
+        includeGroupByRegex("com\\.android.*")
+        includeGroupByRegex("com\\.google.*")
+        includeGroupByRegex("androidx.*")
+      }
+    }
+
     mavenCentral()
+    gradlePluginPortal()
   }
 }
 
 dependencyResolutionManagement {
   repositories {
-    google()
+    google {
+      content {
+        includeGroupByRegex("com\\.android.*")
+        includeGroupByRegex("com\\.google.*")
+        includeGroupByRegex("androidx.*")
+      }
+    }
+
     mavenCentral()
   }
 }
 
-include(":androidApp")
-include(":shared")
+include(
+  ":androidApp",
+  ":shared",
+)
