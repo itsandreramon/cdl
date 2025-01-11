@@ -11,19 +11,13 @@ class KotlinMultiplatformConventionPlugin : Plugin<Project> {
 
       extensions.configure<KotlinMultiplatformExtension> {
         if (pluginManager.hasPlugin("com.android.library")) {
-          androidTarget()
+          androidTarget {
+
+          }
         }
 
         iosArm64()
         iosSimulatorArm64()
-
-        targets.configureEach {
-          compilations.configureEach {
-            compileTaskProvider.configure {
-              compilerOptions { freeCompilerArgs.add("-Xexpect-actual-classes") }
-            }
-          }
-        }
       }
 
       configureSpotless()

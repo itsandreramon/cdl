@@ -37,6 +37,11 @@ gradlePlugin {
       implementationClass = "AndroidApplicationConventionPlugin"
     }
 
+    register("androidLibrary") {
+      id = "co.andrethiele.cdl.android.library"
+      implementationClass = "AndroidLibraryConventionPlugin"
+    }
+
     register("kotlinMultiplatform") {
       id = "co.andrethiele.cdl.kotlin.multiplatform"
       implementationClass = "KotlinMultiplatformConventionPlugin"
