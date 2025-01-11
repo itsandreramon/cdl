@@ -8,7 +8,11 @@ plugins {
 kotlin {
   androidTarget {
     compilations.all {
-      compileTaskProvider.configure { compilerOptions { jvmTarget.set(JvmTarget.JVM_1_8) } }
+      compileTaskProvider.configure {
+        compilerOptions {
+          jvmTarget.set(JvmTarget.JVM_1_8)
+        }
+      }
     }
   }
 
@@ -29,7 +33,9 @@ android {
   namespace = "co.andrethiele.cdl"
   compileSdk = 35
 
-  defaultConfig { minSdk = 26 }
+  defaultConfig {
+    minSdk = 26
+  }
 
   compileOptions {
     sourceCompatibility = JavaVersion.VERSION_1_8

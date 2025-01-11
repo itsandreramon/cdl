@@ -1,6 +1,8 @@
 @file:Suppress("UnstableApiUsage")
 
 pluginManagement {
+  includeBuild("gradle/build-logic")
+
   repositories {
     google {
       content {
