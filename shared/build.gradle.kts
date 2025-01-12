@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
   id("co.andrethiele.cdl.android.library")
   id("co.andrethiele.cdl.kotlin.multiplatform")
