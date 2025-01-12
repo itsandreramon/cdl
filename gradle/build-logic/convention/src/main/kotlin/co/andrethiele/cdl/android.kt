@@ -1,8 +1,8 @@
 package co.andrethiele.cdl
 
 import com.android.build.gradle.BaseExtension
+import org.gradle.api.JavaVersion
 import org.gradle.api.Project
-import org.gradle.kotlin.dsl.assign
 import org.gradle.kotlin.dsl.configure
 
 private fun Project.android(action: BaseExtension.() -> Unit) =
@@ -15,6 +15,12 @@ internal fun Project.configureAndroid() {
     defaultConfig {
       minSdk = Versions.MIN_SDK
       targetSdk = Versions.TARGET_SDK
+    }
+
+    compileOptions {
+      val javaVersion = JavaVersion.toVersion(Versions.JVM_TARGET)
+      targetCompatibility = javaVersion
+      sourceCompatibility = javaVersion
     }
   }
 
