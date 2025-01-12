@@ -1,3 +1,4 @@
+import co.andrethiele.cdl.configureKotlin
 import co.andrethiele.cdl.configureSpotless
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -11,9 +12,7 @@ class KotlinMultiplatformConventionPlugin : Plugin<Project> {
 
       extensions.configure<KotlinMultiplatformExtension> {
         if (pluginManager.hasPlugin("com.android.library")) {
-          androidTarget {
-
-          }
+          androidTarget()
         }
 
         iosArm64()

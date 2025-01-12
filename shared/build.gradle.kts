@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 plugins {
   id("co.andrethiele.cdl.android.library")
   id("co.andrethiele.cdl.kotlin.multiplatform")
@@ -12,7 +14,10 @@ kotlin {
   }
 
   sourceSets {
-    commonMain.dependencies { }
+    commonMain.dependencies {
+
+    }
+
     commonTest.dependencies { implementation(libs.kotlin.test) }
   }
 }

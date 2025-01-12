@@ -1,8 +1,8 @@
 package co.andrethiele.cdl
 
 import com.android.build.gradle.BaseExtension
-import configureKotlin
 import org.gradle.api.Project
+import org.gradle.kotlin.dsl.assign
 import org.gradle.kotlin.dsl.configure
 
 private fun Project.android(action: BaseExtension.() -> Unit) =
