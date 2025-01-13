@@ -15,32 +15,28 @@ import co.andrethiele.cdl.Greeting
 import co.andrethiele.cdl.android.ui.theme.AppTheme
 
 class MainActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContent {
-            AppTheme {
-                Scaffold(
-                    topBar = {
-                        TopAppBar(title = { Text("Title") })
-                    },
-                    content = { padding ->
-                        Box(modifier = Modifier.padding(padding)) {
-                            GreetingView(text = Greeting().greet())
-                        }
-                    }
-                )
-            }
-        }
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    setContent {
+      AppTheme {
+        Scaffold(
+          topBar = { TopAppBar(title = { Text("Title") }) },
+          content = { padding ->
+            Box(modifier = Modifier.padding(padding)) { GreetingView(text = Greeting().greet()) }
+          },
+        )
+      }
     }
+  }
 }
 
 @Composable
 fun GreetingView(text: String, modifier: Modifier = Modifier) {
-    Text(text = text)
+  Text(text = text)
 }
 
 @Preview
 @Composable
 private fun DefaultPreview() {
-    AppTheme { GreetingView("Hello, Android!") }
+  AppTheme { GreetingView("Hello, Android!") }
 }

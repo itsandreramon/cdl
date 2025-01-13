@@ -11,11 +11,7 @@ kotlin {
     }
   }
 
-  sourceSets {
-    commonTest.dependencies { implementation(libs.kotlin.test) }
-  }
+  sourceSets { commonTest.dependencies { implementation(libs.kotlin.test) } }
 }
 
-android {
-  namespace = "co.andrethiele.cdl"
-}
+android { namespace = "co.andrethiele.cdl" }
