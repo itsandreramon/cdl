@@ -1,26 +1,17 @@
 package co.andrethiele.cdl
 
-import com.android.build.gradle.BaseExtension
+import com.android.build.api.dsl.CommonExtension
 import org.gradle.api.JavaVersion
 import org.gradle.api.Project
-import org.gradle.kotlin.dsl.configure
 
-private fun Project.android(action: BaseExtension.() -> Unit) =
-  extensions.configure<BaseExtension>(action)
-
-internal fun Project.configureAndroid() {
-  android {
-    compileSdkVersion(Versions.COMPILE_SDK)
-
-    defaultConfig {
-      minSdk = Versions.MIN_SDK
-      targetSdk = Versions.TARGET_SDK
-    }
+internal fun Project.configureAndroid(extension: CommonExtension<*, *, *, *, *, *>) {
+  extension.apply {
+    compileSdk = Versions.COMPILE_SDK
+    defaultConfig { minSdk = Versions.MIN_SDK }
 
     compileOptions {
-      val javaVersion = JavaVersion.toVersion(Versions.JVM_TARGET)
-      targetCompatibility = javaVersion
-      sourceCompatibility = javaVersion
+      targetCompatibility = JavaVersion.toVersion(Versions.JVM_TARGET)
+      sourceCompatibility = JavaVersion.toVersion(Versions.JVM_TARGET)
     }
   }
 

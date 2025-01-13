@@ -15,8 +15,7 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
       }
 
       extensions.configure<ApplicationExtension> {
-        configureAndroid()
-
+        configureAndroid(this)
         buildFeatures { compose = true }
       }
 
