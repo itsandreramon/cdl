@@ -15,11 +15,11 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -28,13 +28,13 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import cdl.composeapp.generated.resources.Res
 import cdl.composeapp.generated.resources.abezy
 import cdl.composeapp.generated.resources.shotzzy
 import co.andrethiele.cdl.ui.theme.AppTheme
-import org.jetbrains.compose.resources.DrawableResource
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
@@ -45,12 +45,14 @@ fun App() {
   AppTheme {
     Scaffold(
       topBar = {
-        TopAppBar(
+        CenterAlignedTopAppBar(
           title = {
-            Text(text = "Call of Duty League",
-                 fontWeight = FontWeight.Bold
+            Text(
+              text = "Players",
+              fontWeight = FontWeight.Bold,
+              textAlign = TextAlign.Center,
             )
-          }
+          },
         )
       },
       content = { padding ->
