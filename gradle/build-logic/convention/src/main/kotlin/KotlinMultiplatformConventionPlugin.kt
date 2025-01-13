@@ -9,16 +9,6 @@ class KotlinMultiplatformConventionPlugin : Plugin<Project> {
   override fun apply(target: Project) =
     with(target) {
       with(pluginManager) { apply("org.jetbrains.kotlin.multiplatform") }
-
-      extensions.configure<KotlinMultiplatformExtension> {
-        if (pluginManager.hasPlugin("com.android.library")) {
-          androidTarget()
-        }
-
-        iosArm64()
-        iosSimulatorArm64()
-      }
-
       configureSpotless()
       configureKotlin()
     }

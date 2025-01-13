@@ -26,7 +26,8 @@ spotless {
 dependencies {
   compileOnly(libs.kotlin.gradlePlugin)
   compileOnly(libs.android.gradlePlugin)
-  compileOnly(libs.compose.gradlePlugin)
+  compileOnly(libs.compose.compiler.gradlePlugin)
+  compileOnly(libs.compose.multiplatform.gradlePlugin)
   compileOnly(libs.spotless.gradlePlugin)
 }
 
@@ -37,19 +38,14 @@ gradlePlugin {
       implementationClass = "AndroidApplicationConventionPlugin"
     }
 
-    register("androidLibrary") {
-      id = "co.andrethiele.cdl.android.library"
-      implementationClass = "AndroidLibraryConventionPlugin"
+    register("composeMultiplatform") {
+      id = "co.andrethiele.cdl.compose.multiplatform"
+      implementationClass = "ComposeMultiplatformConventionPlugin"
     }
 
     register("kotlinMultiplatform") {
       id = "co.andrethiele.cdl.kotlin.multiplatform"
       implementationClass = "KotlinMultiplatformConventionPlugin"
-    }
-
-    register("kotlinAndroid") {
-      id = "co.andrethiele.cdl.kotlin.android"
-      implementationClass = "KotlinAndroidConventionPlugin"
     }
   }
 }
