@@ -1,3 +1,5 @@
+package co.andrethiele.cdl.ui.model
+
 import androidx.compose.ui.graphics.Color
 import org.jetbrains.compose.resources.DrawableResource
 
