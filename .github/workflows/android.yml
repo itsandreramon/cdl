@@ -1,9 +1,9 @@
 name: Build Android
 
-on: pull_request
+on: push
 
 concurrency:
-  group: ios-${{ github.head_ref }}
+  group: android-${{ github.head_ref }}
   cancel-in-progress: true
 
 jobs:
