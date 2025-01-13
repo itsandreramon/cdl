@@ -1,3 +1,4 @@
+import co.andrethiele.cdl.Versions
 import co.andrethiele.cdl.configureAndroid
 import co.andrethiele.cdl.libs
 import com.android.build.api.dsl.ApplicationExtension
@@ -16,6 +17,7 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
 
       extensions.configure<ApplicationExtension> {
         configureAndroid(this)
+        defaultConfig { targetSdk = Versions.TARGET_SDK }
         buildFeatures { compose = true }
       }
 

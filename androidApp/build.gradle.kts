@@ -14,6 +14,10 @@ android {
 
   packaging { resources { excludes += "/META-INF/{AL2.0,LGPL2.1}" } }
   buildTypes { getByName("release") { isMinifyEnabled = false } }
+
+  kotlinOptions {
+    freeCompilerArgs += listOf("-opt-in=androidx.compose.material3.ExperimentalMaterial3Api")
+  }
 }
 
 dependencies {
