@@ -8,6 +8,6 @@ Kotlin Multiplatform app to show [Call of Duty League](https://www.callofdutylea
 
 ### Preview
 <ul>
-<img src="resources/preview-ios.png" height="400" alt="">
-<img src="resources/preview-android.png" height="400" alt="">
+<img src="resources/preview-ios.png" height="300" alt="">
+<img src="resources/preview-android.png" height="300" alt="">
 </ul>
