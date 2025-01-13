@@ -13,5 +13,7 @@ fun Project.configureAndroid(extension: CommonExtension<*, *, *, *, *, *>) {
       targetCompatibility = JavaVersion.toVersion(Versions.JVM_TARGET)
       sourceCompatibility = JavaVersion.toVersion(Versions.JVM_TARGET)
     }
+
+    lint { abortOnError = true }
   }
 }
