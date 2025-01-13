@@ -7,4 +7,7 @@ Kotlin Multiplatform app to view [Call of Duty League](https://www.callofdutylea
 - [Koin](https://github.com/InsertKoinIO/koin)
 
 ### Preview
-<img src="resources/preview.png" width="300" alt="">
+<li>
+<img src="resources/preview-ios.png" width="300" alt="">
+<img src="resources/preview-android.png" width="300" alt="">
+</li>
