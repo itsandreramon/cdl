@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "name": "Atlanta FaZe",
+        "tint": "#000000"
+    },
+    {
+        "id": 2,
+        "name": "OpTic Texas",
+        "tint": "#9CC43D"
+    }
+]

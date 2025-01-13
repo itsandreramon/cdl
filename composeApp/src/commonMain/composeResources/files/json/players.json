@@ -3,12 +3,14 @@
     "id": 1,
     "tag": "aBeZy",
     "name": "Tyler Pharris",
-    "avatar": "abezy.png"
+    "avatar": "abezy.png",
+    "team": "1"
   },
   {
     "id": 2,
     "tag": "Shotzzy",
     "name": "Anthony Cuevas-Castro",
-    "avatar": "shotzzy.png"
+    "avatar": "shotzzy.png",
+    "team": "2"
   }
 ]

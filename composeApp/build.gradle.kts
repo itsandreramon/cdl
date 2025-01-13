@@ -30,8 +30,11 @@ kotlin {
       implementation(libs.androidx.lifecycle.viewmodel)
       implementation(libs.androidx.lifecycle.runtime.compose)
       implementation(libs.kotlinx.serialization.json)
+      implementation(libs.kotlinx.serialization.core)
       implementation(project.dependencies.platform(libs.koin.bom))
       implementation(libs.koin.core)
+      implementation(libs.coil.compose)
+      implementation(libs.coil.ktor)
     }
 
     commonTest.dependencies { implementation(libs.kotlin.test) }
@@ -40,4 +43,7 @@ kotlin {
 
 android { namespace = "co.andrethiele.cdl" }
 
-dependencies { debugImplementation(compose.uiTooling) }
+dependencies {
+  lintChecks(libs.compose.lints)
+  debugImplementation(compose.uiTooling)
+}
