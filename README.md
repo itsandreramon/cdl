@@ -1,5 +1,5 @@
 # 🚧 work in progress 🚧
-Kotlin Multiplatform app to show [Call of Duty League](https://www.callofdutyleague.com/en-us/teams) player stats.
+Kotlin Multiplatform app to view [Call of Duty League](https://www.callofdutyleague.com/en-us/teams) player stats.
 
 ### Stack
 - [Compose](https://www.jetbrains.com/de-de/compose-multiplatform/)
