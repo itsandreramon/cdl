@@ -27,12 +27,18 @@ kotlin {
       implementation(compose.ui)
       implementation(compose.components.resources)
       implementation(compose.components.uiToolingPreview)
+      
       implementation(libs.androidx.lifecycle.viewmodel)
       implementation(libs.androidx.lifecycle.runtime.compose)
       implementation(libs.kotlinx.serialization.json)
       implementation(libs.kotlinx.serialization.core)
+
       implementation(project.dependencies.platform(libs.koin.bom))
       implementation(libs.koin.core)
+      implementation(libs.koin.core.viewmodel)
+      implementation(libs.koin.compose)
+      implementation(libs.koin.compose.viewmodel)
+
       implementation(libs.coil.compose)
       implementation(libs.coil.ktor)
     }
@@ -41,7 +47,13 @@ kotlin {
   }
 }
 
-android { namespace = "co.andrethiele.cdl" }
+android {
+  namespace = "co.andrethiele.cdl"
+
+  sourceSets["main"].apply {
+    assets.srcDirs("src/commonMain/assets")
+  }
+}
 
 dependencies {
   lintChecks(libs.compose.lints)

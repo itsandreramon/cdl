@@ -1,7 +1,7 @@
 package co.andrethiele.cdl.resources
 
 interface ResourceLoader {
-    fun readJson(path: String): String?
+    fun readJsonFromAssets(path: String): String?
 }
 
 expect class ResourceLoaderImpl : ResourceLoader

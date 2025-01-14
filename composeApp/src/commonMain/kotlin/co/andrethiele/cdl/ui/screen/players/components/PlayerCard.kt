@@ -29,7 +29,9 @@ fun PlayerCard(model: PlayerUiModel, modifier: Modifier = Modifier, onClick: () 
         }
     ) {
       Image(
-        painter = painterResource(model.avatar),
+        painter = painterResource(
+          model.avatar
+        ),
         contentDescription = null,
         modifier = Modifier.fillMaxSize(),
         contentScale = ContentScale.Crop,

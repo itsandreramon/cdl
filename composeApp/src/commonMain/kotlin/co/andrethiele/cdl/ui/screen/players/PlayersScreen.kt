@@ -1,34 +1,47 @@
 package co.andrethiele.cdl.ui.screen.players
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import cdl.composeapp.generated.resources.Res
-import cdl.composeapp.generated.resources.abezy
-import cdl.composeapp.generated.resources.shotzzy
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.viewmodel.compose.viewModel
+import co.andrethiele.cdl.data.player.PlayerRepository
 import co.andrethiele.cdl.ui.model.PlayerUiModel
+import co.andrethiele.cdl.ui.model.toUiModel
 import co.andrethiele.cdl.ui.screen.players.components.PlayerCards
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.launch
 
 @Composable
-fun PlayersScreen() {
+fun PlayersScreen(viewModel: PlayersViewModel = viewModel()) {
+  val players by viewModel.players.collectAsStateWithLifecycle()
+
+  LaunchedEffect(Unit) {
+    viewModel.init()
+  }
+
   PlayerCards(
     padding = 16.dp,
-    players =
-      listOf(
-        PlayerUiModel(
-          id = 1,
-          tag = "Shotzzy",
-          name = "Anthony Cuevas-Castro",
-          teamTint = Color(0xFF9CC43D),
-          avatar = Res.drawable.shotzzy,
-        ),
-        PlayerUiModel(
-          id = 2,
-          tag = "aBeZy",
-          name = "Tyler Pharris",
-          teamTint = Color(0xFFE43D30),
-          avatar = Res.drawable.abezy,
-        ),
-      ),
+    players = players,
   )
+}
+
+class PlayersViewModel(
+  private val playerRepository: PlayerRepository,
+) : ViewModel() {
+
+  private val _players = MutableStateFlow<List<PlayerUiModel>>(emptyList())
+  val players: StateFlow<List<PlayerUiModel>> = _players
+
+  fun init() {
+    viewModelScope.launch {
+      _players.value = playerRepository.getAllPlayers()
+        .map { it.toUiModel(Color.Black) }
+    }
+  }
 }
