@@ -3,7 +3,11 @@ package co.andrethiele.cdl.ui.screen.players.components
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -17,7 +21,6 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import co.andrethiele.cdl.ui.model.PlayerUiModel
-import org.jetbrains.compose.resources.painterResource
 
 @Composable
 fun PlayerCard(model: PlayerUiModel, modifier: Modifier = Modifier, onClick: () -> Unit = {}) {
@@ -29,9 +32,7 @@ fun PlayerCard(model: PlayerUiModel, modifier: Modifier = Modifier, onClick: () 
         }
     ) {
       Image(
-        painter = painterResource(
-          model.avatar
-        ),
+        bitmap = model.avatar,
         contentDescription = null,
         modifier = Modifier.fillMaxSize(),
         contentScale = ContentScale.Crop,

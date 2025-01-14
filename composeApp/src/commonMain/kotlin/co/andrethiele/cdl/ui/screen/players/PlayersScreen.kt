@@ -22,7 +22,7 @@ fun PlayersScreen(viewModel: PlayersViewModel = viewModel()) {
   val players by viewModel.players.collectAsStateWithLifecycle()
 
   LaunchedEffect(Unit) {
-    viewModel.init()
+    // viewModel.init()
   }
 
   PlayerCards(
