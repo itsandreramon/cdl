@@ -4,6 +4,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -22,6 +23,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import cdl.composeapp.generated.resources.Res
 import co.andrethiele.cdl.feature.players.ui.model.PlayerUiModel
@@ -66,13 +68,19 @@ fun PlayerCard(model: PlayerUiModel, modifier: Modifier = Modifier, onClick: () 
             )
       )
 
-      Text(
-        text = model.tag,
-        modifier = Modifier.align(Alignment.BottomCenter).padding(16.dp),
-        color = Color.White,
-        fontWeight = FontWeight.Bold,
-        style = MaterialTheme.typography.titleLarge,
-      )
+      Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier.fillMaxWidth().padding(16.dp).align(Alignment.BottomCenter),
+      ) {
+        Text(
+          text = model.tag,
+          color = Color.White,
+          fontWeight = FontWeight.Bold,
+          style = MaterialTheme.typography.titleLarge,
+        )
+
+        Text(text = model.name, color = Color.White, textAlign = TextAlign.Center)
+      }
     }
   }
 }
