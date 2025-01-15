@@ -48,11 +48,7 @@ kotlin {
   }
 }
 
-android {
-  namespace = "co.andrethiele.cdl"
-
-  sourceSets["main"].apply { assets.srcDirs("src/commonMain/assets") }
-}
+android { namespace = "co.andrethiele.cdl" }
 
 dependencies {
   lintChecks(libs.compose.lints)
