@@ -15,12 +15,7 @@ import org.koin.dsl.module
 
 fun initKoin(appDeclaration: KoinAppDeclaration = {}) = startKoin {
   appDeclaration()
-  modules(
-    commonModule,
-    platformModule,
-    playersModule,
-    teamsModule,
-  )
+  modules(commonModule, platformModule, playersModule, teamsModule)
 }
 
 expect val platformModule: Module

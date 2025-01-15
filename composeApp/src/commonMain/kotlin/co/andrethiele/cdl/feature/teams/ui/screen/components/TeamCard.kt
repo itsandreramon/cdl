@@ -56,8 +56,7 @@ fun TeamCard(model: TeamUiModel, modifier: Modifier = Modifier, onClick: () -> U
             .background(
               brush =
                 Brush.verticalGradient(
-                  colors =
-                    listOf(Color.Transparent, (model.tint).copy(alpha = .5f)),
+                  colors = listOf(Color.Transparent, (model.tint).copy(alpha = .5f)),
                   startY = 0f,
                   endY = Float.POSITIVE_INFINITY,
                 )

@@ -50,6 +50,4 @@ kotlin {
 
 android { namespace = "co.andrethiele.cdl" }
 
-dependencies {
-  debugImplementation(compose.uiTooling)
-}
+dependencies { debugImplementation(compose.uiTooling) }

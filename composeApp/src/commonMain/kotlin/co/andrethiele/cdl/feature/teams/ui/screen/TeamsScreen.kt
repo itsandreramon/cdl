@@ -25,9 +25,7 @@ fun TeamsScreen(viewModel: TeamsViewModel = koinViewModel()) {
   TeamCards(padding = 16.dp, teams = teams)
 }
 
-class TeamsViewModel(
-  private val teamRepository: TeamRepository,
-) : ViewModel() {
+class TeamsViewModel(private val teamRepository: TeamRepository) : ViewModel() {
 
   private val _teams = MutableStateFlow<List<TeamUiModel>>(emptyList())
   val teams: StateFlow<List<TeamUiModel>> = _teams

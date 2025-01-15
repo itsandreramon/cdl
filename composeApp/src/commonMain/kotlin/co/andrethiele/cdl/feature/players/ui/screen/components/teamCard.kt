@@ -32,7 +32,9 @@ import org.jetbrains.compose.resources.decodeToImageBitmap
 @Composable
 fun PlayerCard(model: PlayerUiModel, modifier: Modifier = Modifier, onClick: () -> Unit = {}) {
   val avatarBitmap by
-    produceState<ImageBitmap?>(null) { value = Res.readBytes(model.avatarPath).decodeToImageBitmap() }
+    produceState<ImageBitmap?>(null) {
+      value = Res.readBytes(model.avatarPath).decodeToImageBitmap()
+    }
 
   Box(modifier = modifier) {
     Box(

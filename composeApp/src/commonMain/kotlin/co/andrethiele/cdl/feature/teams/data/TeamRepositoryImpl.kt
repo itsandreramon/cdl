@@ -24,9 +24,10 @@ class TeamRepositoryImpl(
 
   override suspend fun getTeamById(id: Int): TeamEntity? {
     return runSuspendCatching {
-      val teams = json.decodeFromString<List<TeamEntity>>(jsonString.await())
-      teams.find { it.id == id }
-    }.getOrNull()
+        val teams = json.decodeFromString<List<TeamEntity>>(jsonString.await())
+        teams.find { it.id == id }
+      }
+      .getOrNull()
   }
 
   override suspend fun getAllTeams(): Result<List<TeamEntity>> {
