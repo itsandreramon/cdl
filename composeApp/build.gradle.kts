@@ -19,6 +19,7 @@ kotlin {
       implementation(compose.preview)
       implementation(libs.koin.android)
       implementation(libs.androidx.activity.compose)
+      implementation(libs.kotlinx.coroutines.android)
     }
 
     commonMain.dependencies {
@@ -32,6 +33,7 @@ kotlin {
 
       implementation(libs.androidx.lifecycle.viewmodel)
       implementation(libs.androidx.lifecycle.runtime.compose)
+      implementation(libs.kotlinx.coroutines.core)
       implementation(libs.kotlinx.serialization.json)
       implementation(libs.kotlinx.serialization.core)
 

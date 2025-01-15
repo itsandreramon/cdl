@@ -4,4 +4,8 @@ package co.andrethiele.cdl.data
 
 import kotlinx.coroutines.CoroutineDispatcher
 
-data class CoroutineDispatchers(val io: CoroutineDispatcher, val main: CoroutineDispatcher)
+data class AppCoroutineDispatchers(
+  val io: CoroutineDispatcher,
+  val db: CoroutineDispatcher,
+  val main: CoroutineDispatcher,
+)
