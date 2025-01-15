@@ -10,18 +10,16 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import co.andrethiele.cdl.di.commonModule
-import co.andrethiele.cdl.feature.players.di.playersModule
 import co.andrethiele.cdl.feature.players.ui.screen.PlayersScreen
 import co.andrethiele.cdl.ui.theme.AppTheme
 import org.jetbrains.compose.ui.tooling.preview.Preview
-import org.koin.compose.KoinApplication
+import org.koin.compose.KoinContext
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 @Preview
-fun App() {
-  KoinApplication(application = { modules(commonModule, playersModule) }) {
+fun AppContainer() {
+  KoinContext {
     AppTheme {
       Scaffold(
         topBar = {

@@ -8,5 +8,5 @@ data class PlayerEntity(
   val name: String,
   val tag: String,
   val avatar: String,
-  val team: Int,
+  val teamId: Int,
 )

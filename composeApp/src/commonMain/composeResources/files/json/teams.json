@@ -2,11 +2,11 @@
     {
         "id": 1,
         "name": "Atlanta FaZe",
-        "tint": "#E43D30"
+        "tintHex": "#E43D30"
     },
     {
         "id": 2,
         "name": "OpTic Texas",
-        "tint": "#9CC43D"
+        "tintHex": "#9CC43D"
     }
 ]

@@ -56,7 +56,8 @@ fun PlayerCard(model: PlayerUiModel, modifier: Modifier = Modifier, onClick: () 
             .background(
               brush =
                 Brush.verticalGradient(
-                  colors = listOf(Color.Transparent, model.teamTint.copy(alpha = .5f)),
+                  colors =
+                    listOf(Color.Transparent, (model.teamTint ?: Color.Black).copy(alpha = .5f)),
                   startY = 0f,
                   endY = Float.POSITIVE_INFINITY,
                 )
