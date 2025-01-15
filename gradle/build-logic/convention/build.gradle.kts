@@ -11,6 +11,7 @@ spotless {
   kotlin {
     target("src/**/*.kt")
     ktfmt(ktfmtVersion).googleStyle()
+    licenseHeaderFile(rootProject.file("../../spotless/copyright.txt"))
     trimTrailingWhitespace()
     endWithNewline()
   }

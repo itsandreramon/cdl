@@ -1,3 +1,5 @@
+// Copyright 2025 - André Thiele
+
 import co.andrethiele.cdl.Versions
 import co.andrethiele.cdl.configureAndroid
 import com.android.build.api.dsl.ApplicationExtension
@@ -8,9 +10,7 @@ import org.gradle.kotlin.dsl.configure
 class AndroidApplicationConventionPlugin : Plugin<Project> {
   override fun apply(target: Project) =
     with(target) {
-      with(pluginManager) {
-        apply("com.android.application")
-      }
+      with(pluginManager) { apply("com.android.application") }
 
       extensions.configure<ApplicationExtension> {
         configureAndroid(this)

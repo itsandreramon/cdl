@@ -1,3 +1,5 @@
+// Copyright 2025 - André Thiele
+
 import co.andrethiele.cdl.configureCompose
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -9,12 +11,13 @@ private fun Project.composeCompiler(block: ComposeCompilerGradlePluginExtension.
 }
 
 class ComposeMultiplatformConventionPlugin : Plugin<Project> {
-  override fun apply(target: Project) = with(target) {
-    with(pluginManager) {
-      apply("org.jetbrains.compose")
-      apply("org.jetbrains.kotlin.plugin.compose")
-    }
+  override fun apply(target: Project) =
+    with(target) {
+      with(pluginManager) {
+        apply("org.jetbrains.compose")
+        apply("org.jetbrains.kotlin.plugin.compose")
+      }
 
-    configureCompose()
-  }
+      configureCompose()
+    }
 }

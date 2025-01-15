@@ -1,3 +1,5 @@
+// Copyright 2025 - André Thiele
+
 import co.andrethiele.cdl.configureKotlin
 import co.andrethiele.cdl.configureSpotless
 import org.gradle.api.Plugin

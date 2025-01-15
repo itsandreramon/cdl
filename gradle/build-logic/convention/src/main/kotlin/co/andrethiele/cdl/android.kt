@@ -1,3 +1,5 @@
+// Copyright 2025 - André Thiele
+
 package co.andrethiele.cdl
 
 import com.android.build.api.dsl.CommonExtension
