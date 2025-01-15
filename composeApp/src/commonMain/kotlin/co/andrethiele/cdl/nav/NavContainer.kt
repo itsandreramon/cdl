@@ -18,6 +18,7 @@ fun NavContainer(navController: NavHostController) {
     composable<TeamsRoute> {
       TeamsScreen(onTeamClicked = { navController.navigate(PlayersRoute(it)) })
     }
-    composable<PlayersRoute> { PlayersScreen() }
+
+    composable<PlayersRoute> { PlayersScreen(onBackClicked = { navController.popBackStack() }) }
   }
 }

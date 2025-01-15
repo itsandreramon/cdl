@@ -11,6 +11,7 @@ spotless = "6.25.0"
 ktfmt = "0.53"
 coil = "3.0.4"
 koin = "4.0.0"
+haze = "1.2.1"
 
 [libraries]
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
@@ -28,6 +29,7 @@ koin-core = { group = "io.insert-koin", name = "koin-core" }
 koin-core-viewmodel = { group = "io.insert-koin", name = "koin-core-viewmodel" }
 koin-compose = { group = "io.insert-koin", name = "koin-compose" }
 koin-compose-viewmodel = { group = "io.insert-koin", name = "koin-compose-viewmodel" }
+haze = { group = "dev.chrisbanes.haze", name = "haze", version.ref = "haze" }
 
 # Test dependencies
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
