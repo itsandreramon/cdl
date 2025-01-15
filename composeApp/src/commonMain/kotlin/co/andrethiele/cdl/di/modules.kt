@@ -13,10 +13,12 @@ import org.koin.core.qualifier.named
 import org.koin.dsl.KoinAppDeclaration
 import org.koin.dsl.module
 
-fun initKoin(appDeclaration: KoinAppDeclaration = {}) = startKoin {
+fun initKoin(appDeclaration: KoinAppDeclaration) = startKoin {
   appDeclaration()
   modules(commonModule, platformModule, playersModule, teamsModule)
 }
+
+fun initKoin() = initKoin {}
 
 expect val platformModule: Module
 
