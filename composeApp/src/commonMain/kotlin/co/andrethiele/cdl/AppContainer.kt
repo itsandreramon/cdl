@@ -10,7 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import co.andrethiele.cdl.feature.players.ui.screen.PlayersScreen
+import co.andrethiele.cdl.feature.teams.ui.screen.TeamsScreen
 import co.andrethiele.cdl.ui.theme.AppTheme
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import org.koin.compose.KoinContext
@@ -25,11 +25,11 @@ fun AppContainer() {
         topBar = {
           CenterAlignedTopAppBar(
             title = {
-              Text(text = "Players", fontWeight = FontWeight.Bold, textAlign = TextAlign.Center)
+              Text(text = "Home", fontWeight = FontWeight.Bold, textAlign = TextAlign.Center)
             }
           )
         },
-        content = { padding -> Box(Modifier.padding(padding)) { PlayersScreen() } },
+        content = { padding -> Box(Modifier.padding(padding)) { TeamsScreen() } },
       )
     }
   }

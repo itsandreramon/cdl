@@ -2,6 +2,7 @@ package co.andrethiele.cdl.di
 
 import co.andrethiele.cdl.data.CoroutineDispatchers
 import co.andrethiele.cdl.feature.players.di.playersModule
+import co.andrethiele.cdl.feature.teams.di.teamsModule
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
@@ -14,7 +15,12 @@ import org.koin.dsl.module
 
 fun initKoin(appDeclaration: KoinAppDeclaration = {}) = startKoin {
   appDeclaration()
-  modules(commonModule, platformModule, playersModule)
+  modules(
+    commonModule,
+    platformModule,
+    playersModule,
+    teamsModule,
+  )
 }
 
 expect val platformModule: Module

@@ -2,11 +2,13 @@
     {
         "id": 1,
         "name": "Atlanta FaZe",
-        "tintHex": "#E43D30"
+        "tintHex": "#E43D30",
+        "logo": "atlante_faze.png"
     },
     {
         "id": 2,
         "name": "OpTic Texas",
-        "tintHex": "#9CC43D"
+        "tintHex": "#9CC43D",
+        "logo": "optic_texas.png"
     }
 ]
