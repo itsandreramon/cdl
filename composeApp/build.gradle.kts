@@ -51,6 +51,5 @@ kotlin {
 android { namespace = "co.andrethiele.cdl" }
 
 dependencies {
-  lintChecks(libs.compose.lints)
   debugImplementation(compose.uiTooling)
 }
