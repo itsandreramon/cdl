@@ -1,3 +1,5 @@
+// Copyright 2025 - André Thiele
+
 package co.andrethiele.cdl.feature.players.ui.screen.components
 
 import androidx.compose.foundation.Image

@@ -1,3 +1,5 @@
+// Copyright 2025 - André Thiele
+
 package co.andrethiele.cdl.di
 
 import co.andrethiele.cdl.data.CoroutineDispatchers

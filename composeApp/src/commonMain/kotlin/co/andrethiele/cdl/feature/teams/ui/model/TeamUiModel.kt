@@ -1,3 +1,5 @@
+// Copyright 2025 - André Thiele
+
 package co.andrethiele.cdl.feature.teams.ui.model
 
 import androidx.compose.ui.graphics.Color
