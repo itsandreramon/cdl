@@ -1,16 +1,58 @@
 [
   {
     "id": 1,
-    "tag": "aBeZy",
-    "name": "Tyler Pharris",
-    "avatar": "abezy.png",
+    "tag": "Shotzzy",
+    "name": "Anthony Cuevas-Castro",
+    "avatar": "shotzzy.png",
     "teamId": "1"
   },
   {
     "id": 2,
-    "tag": "Shotzzy",
-    "name": "Anthony Cuevas-Castro",
-    "avatar": "shotzzy.png",
+    "tag": "Dashy",
+    "name": "Brandon Otell",
+    "avatar": "dashy.png",
+    "teamId": "1"
+  },
+  {
+    "id": 3,
+    "tag": "Huke",
+    "name": "Cuyler Garland",
+    "avatar": "huke.png",
+    "teamId": "1"
+  },
+  {
+    "id": 4,
+    "tag": "Kenny",
+    "name": "Kenneth Williams",
+    "avatar": "kenny.png",
+    "teamId": "1"
+  },
+  {
+    "id": 5,
+    "tag": "aBeZy",
+    "name": "Tyler Pharris",
+    "avatar": "abezy.png",
+    "teamId": "2"
+  },
+  {
+    "id": 6,
+    "tag": "Simp",
+    "name": "Chris Lehr",
+    "avatar": "simp.png",
+    "teamId": "2"
+  },
+  {
+    "id": 7,
+    "tag": "Drazah",
+    "name": "Zack Jordan",
+    "avatar": "drazah.png",
+    "teamId": "2"
+  },
+  {
+    "id": 8,
+    "tag": "Cellium",
+    "name": "McArthur Jovel",
+    "avatar": "cellium.png",
     "teamId": "2"
   }
 ]
