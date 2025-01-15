@@ -8,6 +8,6 @@ import org.koin.core.qualifier.named
 import org.koin.dsl.module
 
 val playersModule = module {
-  viewModel { PlayersViewModel(get(), get()) }
+  viewModel { PlayersViewModel(get(), get(), get()) }
   single<PlayerRepository> { PlayerRepositoryImpl(get(), get(), get(named("io"))) }
 }

@@ -12,7 +12,7 @@ import androidx.compose.ui.unit.Dp
 import co.andrethiele.cdl.feature.teams.ui.model.TeamUiModel
 
 @Composable
-fun TeamCards(padding: Dp, teams: List<TeamUiModel>) {
+fun TeamCards(padding: Dp, teams: List<TeamUiModel>, onTeamClicked: (teamId: Int) -> Unit) {
   LazyVerticalGrid(
     columns = GridCells.Fixed(2),
     contentPadding = PaddingValues(padding),
@@ -20,6 +20,6 @@ fun TeamCards(padding: Dp, teams: List<TeamUiModel>) {
     verticalArrangement = Arrangement.spacedBy(padding),
     modifier = Modifier.fillMaxSize(),
   ) {
-    items(teams) { TeamCard(it) }
+    items(teams) { TeamCard(it, onClick = { onTeamClicked(it.id) }) }
   }
 }

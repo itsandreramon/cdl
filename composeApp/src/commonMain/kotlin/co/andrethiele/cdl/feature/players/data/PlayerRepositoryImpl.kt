@@ -22,7 +22,10 @@ class PlayerRepositoryImpl(
     }
   }
 
-  override suspend fun getAllPlayers(): Result<List<PlayerEntity>> {
-    return runSuspendCatching { json.decodeFromString<List<PlayerEntity>>(jsonString.await()) }
+  override suspend fun getAllPlayers(teamId: Int): Result<List<PlayerEntity>> {
+    return runSuspendCatching {
+      json.decodeFromString<List<PlayerEntity>>(jsonString.await())
+        .filter { it.teamId == teamId }
+    }
   }
 }
