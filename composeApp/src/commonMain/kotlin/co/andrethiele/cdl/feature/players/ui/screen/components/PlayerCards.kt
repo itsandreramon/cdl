@@ -1,4 +1,4 @@
-package co.andrethiele.cdl.ui.screen.players.components
+package co.andrethiele.cdl.feature.players.ui.screen.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
@@ -9,7 +9,7 @@ import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.Dp
-import co.andrethiele.cdl.ui.model.PlayerUiModel
+import co.andrethiele.cdl.feature.players.ui.model.PlayerUiModel
 
 @Composable
 fun PlayerCards(padding: Dp, players: List<PlayerUiModel>) {

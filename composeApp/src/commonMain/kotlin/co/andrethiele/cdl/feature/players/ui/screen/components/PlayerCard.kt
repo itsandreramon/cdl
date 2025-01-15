@@ -1,4 +1,4 @@
-package co.andrethiele.cdl.ui.screen.players.components
+package co.andrethiele.cdl.feature.players.ui.screen.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -12,18 +12,28 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.produceState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import co.andrethiele.cdl.ui.model.PlayerUiModel
+import cdl.composeapp.generated.resources.Res
+import co.andrethiele.cdl.feature.players.ui.model.PlayerUiModel
+import org.jetbrains.compose.resources.ExperimentalResourceApi
+import org.jetbrains.compose.resources.decodeToImageBitmap
 
+@OptIn(ExperimentalResourceApi::class)
 @Composable
 fun PlayerCard(model: PlayerUiModel, modifier: Modifier = Modifier, onClick: () -> Unit = {}) {
+  val avatarBitmap by
+    produceState<ImageBitmap?>(null) { value = Res.readBytes(model.avatar).decodeToImageBitmap() }
+
   Box(modifier = modifier) {
     Box(
       modifier =
@@ -31,12 +41,14 @@ fun PlayerCard(model: PlayerUiModel, modifier: Modifier = Modifier, onClick: () 
           onClick()
         }
     ) {
-      Image(
-        bitmap = model.avatar,
-        contentDescription = null,
-        modifier = Modifier.fillMaxSize(),
-        contentScale = ContentScale.Crop,
-      )
+      avatarBitmap?.let {
+        Image(
+          bitmap = it,
+          contentDescription = null,
+          modifier = Modifier.fillMaxSize(),
+          contentScale = ContentScale.Crop,
+        )
+      }
 
       Box(
         modifier =

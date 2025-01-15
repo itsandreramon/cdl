@@ -27,7 +27,7 @@ kotlin {
       implementation(compose.ui)
       implementation(compose.components.resources)
       implementation(compose.components.uiToolingPreview)
-      
+
       implementation(libs.androidx.lifecycle.viewmodel)
       implementation(libs.androidx.lifecycle.runtime.compose)
       implementation(libs.kotlinx.serialization.json)
@@ -50,9 +50,7 @@ kotlin {
 android {
   namespace = "co.andrethiele.cdl"
 
-  sourceSets["main"].apply {
-    assets.srcDirs("src/commonMain/assets")
-  }
+  sourceSets["main"].apply { assets.srcDirs("src/commonMain/assets") }
 }
 
 dependencies {
