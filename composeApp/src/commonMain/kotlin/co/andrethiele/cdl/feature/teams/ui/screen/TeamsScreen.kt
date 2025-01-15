@@ -17,18 +17,11 @@ import kotlinx.coroutines.launch
 import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
-fun TeamsScreen(
-  viewModel: TeamsViewModel = koinViewModel(),
-  onTeamClicked: (teamId: Int) -> Unit,
-) {
+fun TeamsScreen(viewModel: TeamsViewModel = koinViewModel(), onTeamClicked: (teamId: Int) -> Unit) {
   val teams by viewModel.teams.collectAsStateWithLifecycle()
   LaunchedEffect(Unit) { viewModel.init() }
 
-  TeamCards(
-    padding = 16.dp,
-    teams = teams,
-    onTeamClicked = onTeamClicked,
-  )
+  TeamCards(padding = 16.dp, teams = teams, onTeamClicked = onTeamClicked)
 }
 
 class TeamsViewModel(private val teamRepository: TeamRepository) : ViewModel() {

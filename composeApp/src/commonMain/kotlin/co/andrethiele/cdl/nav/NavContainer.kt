@@ -8,22 +8,16 @@ import co.andrethiele.cdl.feature.players.ui.screen.PlayersScreen
 import co.andrethiele.cdl.feature.teams.ui.screen.TeamsScreen
 import kotlinx.serialization.Serializable
 
-@Serializable
-object TeamsRoute
+@Serializable object TeamsRoute
 
-@Serializable
-data class PlayersRoute(val teamId: Int)
+@Serializable data class PlayersRoute(val teamId: Int)
 
 @Composable
 fun NavContainer(navController: NavHostController) {
   NavHost(navController, startDestination = TeamsRoute) {
     composable<TeamsRoute> {
-      TeamsScreen(onTeamClicked = {
-        navController.navigate(PlayersRoute(it))
-      })
+      TeamsScreen(onTeamClicked = { navController.navigate(PlayersRoute(it)) })
     }
-    composable<PlayersRoute> {
-      PlayersScreen()
-    }
+    composable<PlayersRoute> { PlayersScreen() }
   }
 }

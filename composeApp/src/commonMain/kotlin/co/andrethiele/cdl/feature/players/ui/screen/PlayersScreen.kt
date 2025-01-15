@@ -41,8 +41,7 @@ class PlayersViewModel(
 
   fun init() {
     viewModelScope.launch {
-      playerRepository.getAllPlayers(route.teamId)
-        .onSuccess { players ->
+      playerRepository.getAllPlayers(route.teamId).onSuccess { players ->
         _players.value =
           players.map {
             val team = teamRepository.getTeamById(it.teamId)
