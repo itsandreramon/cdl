@@ -33,7 +33,7 @@ import org.jetbrains.compose.resources.decodeToImageBitmap
 @OptIn(ExperimentalResourceApi::class)
 @Composable
 fun TeamCard(model: TeamUiModel, modifier: Modifier = Modifier, onClick: () -> Unit = {}) {
-  val avatarBitmap by
+  val logoBitmap by
     produceState<ImageBitmap?>(null) { value = Res.readBytes(model.logoPath).decodeToImageBitmap() }
 
   Box(modifier = modifier) {
@@ -43,15 +43,6 @@ fun TeamCard(model: TeamUiModel, modifier: Modifier = Modifier, onClick: () -> U
           onClick()
         }
     ) {
-      avatarBitmap?.let {
-        Image(
-          bitmap = it,
-          contentDescription = null,
-          modifier = Modifier.fillMaxSize().padding(32.dp),
-          contentScale = ContentScale.Fit,
-        )
-      }
-
       Box(
         modifier =
           Modifier.fillMaxSize()
@@ -65,10 +56,18 @@ fun TeamCard(model: TeamUiModel, modifier: Modifier = Modifier, onClick: () -> U
             )
       )
 
+      logoBitmap?.let {
+        Image(
+          bitmap = it,
+          contentDescription = null,
+          modifier = Modifier.fillMaxSize().padding(32.dp),
+          contentScale = ContentScale.Fit,
+        )
+      }
+
       Text(
         text = model.name,
         modifier = Modifier.align(Alignment.BottomCenter).padding(16.dp),
-        color = Color.White,
         fontWeight = FontWeight.Bold,
         style = MaterialTheme.typography.titleLarge,
       )

@@ -7,6 +7,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -64,6 +65,21 @@ fun PlayerCard(model: PlayerUiModel, modifier: Modifier = Modifier, onClick: () 
                 Brush.verticalGradient(
                   colors =
                     listOf(Color.Transparent, (model.teamTint ?: Color.Black).copy(alpha = .5f)),
+                  startY = 0f,
+                  endY = Float.POSITIVE_INFINITY,
+                )
+            )
+      )
+
+      Box(
+        modifier =
+          Modifier.fillMaxHeight(.5f)
+            .fillMaxWidth()
+            .align(Alignment.BottomCenter)
+            .background(
+              brush =
+                Brush.verticalGradient(
+                  colors = listOf(Color.Transparent, Color.Black.copy(alpha = 1f)),
                   startY = 0f,
                   endY = Float.POSITIVE_INFINITY,
                 )
