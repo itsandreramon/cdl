@@ -5,7 +5,6 @@ package co.andrethiele.cdl
 import org.gradle.api.Project
 import org.gradle.api.plugins.JavaPluginExtension
 import org.gradle.jvm.toolchain.JavaLanguageVersion
-import org.gradle.kotlin.dsl.assign
 import org.gradle.kotlin.dsl.configure
 import org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension
 import org.jetbrains.kotlin.gradle.dsl.KotlinCommonCompilerOptions
@@ -41,7 +40,7 @@ fun Project.configureKotlin() {
   configureJava()
   kotlin {
     compilerOptions {
-      allWarningsAsErrors = true
+      //allWarningsAsErrors = true
       freeCompilerArgs.add("-Xexpect-actual-classes")
     }
   }

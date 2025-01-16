@@ -24,9 +24,15 @@ class PlayerRepositoryImpl(
     }
   }
 
-  override suspend fun getAllPlayers(teamId: Int): Result<List<PlayerEntity>> {
-    return runSuspendCatching {
-      json.decodeFromString<List<PlayerEntity>>(jsonString.await()).filter { it.teamId == teamId }
-    }
+  override suspend fun getPlayerById(playerId: Int): PlayerEntity? {
+    return getAllPlayers().map { it.find { player -> player.id == playerId } }.getOrNull()
+  }
+
+  override suspend fun getAllPlayers(): Result<List<PlayerEntity>> {
+    return runSuspendCatching { json.decodeFromString<List<PlayerEntity>>(jsonString.await()) }
+  }
+
+  override suspend fun getAllPlayersByTeamId(teamId: Int): Result<List<PlayerEntity>> {
+    return getAllPlayers().map { it.filter { player -> player.teamId == teamId } }
   }
 }

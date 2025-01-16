@@ -14,7 +14,11 @@ import androidx.compose.ui.unit.Dp
 import co.andrethiele.cdl.feature.players.ui.model.PlayerUiModel
 
 @Composable
-fun PlayerCards(padding: Dp, players: List<PlayerUiModel>) {
+fun PlayerCards(
+  padding: Dp,
+  players: List<PlayerUiModel>,
+  onPlayerClicked: (playerId: Int) -> Unit,
+) {
   LazyVerticalGrid(
     columns = GridCells.Fixed(2),
     contentPadding = PaddingValues(padding),
@@ -22,6 +26,6 @@ fun PlayerCards(padding: Dp, players: List<PlayerUiModel>) {
     verticalArrangement = Arrangement.spacedBy(padding),
     modifier = Modifier.fillMaxSize(),
   ) {
-    items(players) { PlayerCard(it) }
+    items(players) { PlayerCard(it, onClick = { onPlayerClicked(it.id) }) }
   }
 }
